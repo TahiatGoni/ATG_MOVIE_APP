@@ -1,0 +1,23 @@
+.formRow {
+	width: 100%;
+}
+
+.formLabel {
+	display: inline-block;
+	width: 6rem;
+	margin: 2px;
+	color: white;
+}
+
+.ButtonBar {
+	margin: 5px;
+	width: auto;
+	align-content: center;
+	align-items: center;
+}
+
+.ButtonBar button {
+	margin: 2px;
+	width: 5rem;
+}
+
