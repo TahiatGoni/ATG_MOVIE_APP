@@ -1,5 +1,11 @@
 .formRow {
 	width: 100%;
+	align-items: center;
+	margin: 4px;
+}
+
+.formCol {
+	width: 100%;
 }
 
 .formLabel {
@@ -21,3 +27,9 @@
 	width: 5rem;
 }
 
+.mainLogin {
+	width: 100%;
+	margin: 10px;
+	display: ;
+	height: 100vh;
+}

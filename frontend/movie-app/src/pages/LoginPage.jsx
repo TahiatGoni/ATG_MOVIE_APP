@@ -59,7 +59,7 @@ export function LoginPage() {
 	}
 
 	return(
-		<Container fluid>
+		<Container className="mainLogin" fluid>
 			<Row className="formRow">	
 				<Col>
 					<label className="formLabel" htmlFor="username">Username: </label>

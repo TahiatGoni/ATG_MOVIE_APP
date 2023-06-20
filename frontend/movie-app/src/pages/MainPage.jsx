@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import {Tooltip, OverlayTrigger} from 'react-bootstrap'
 import Button from 'react-bootstrap/Button';
 import ReactLoading from 'react-loading';
 import SlidingPanel from 'react-sliding-side-panel'
@@ -231,17 +232,37 @@ export function MainPage(props) {
 			<SearchResult data={results}/>
 		)
 	}
+
+	const Savetooltip = (
+	  <Tooltip id="tooltip1">
+	    Saved Movies
+	  </Tooltip>
+	);
+
+	const Logouttooltip = (
+	  <Tooltip id="tooltip2">
+	    Logout
+	  </Tooltip>
+	);
+
 	return(
 		<>
+		<div className="controlBanner">
+		<OverlayTrigger placement="bottom" overlay={Savetooltip}>
+			<Button variant="info" id='savedBtn' onClick={()=>{setOpenPanel(true)}}>
+				📽️
+			</Button>
+		</OverlayTrigger>
+		<OverlayTrigger placement="bottom" overlay={Logouttooltip}>
+			<Button alt="Logout" variant="danger" id='logoutBtn' onClick={()=>{
+					dispatch(logOut())
+				}}>
+					⏻
+			</Button>
+		</OverlayTrigger>
+		</div>
 		<Banner/>
 		<Container>
-
-			<Button onClick={()=>{
-				dispatch(logOut())
-			}}>
-				Logout
-			</Button>
-			<Button onClick={()=>{setOpenPanel(true)}}>SavedMovies</Button>
 			<SlidingPanel
 				type={'right'}
 				isOpen={openPanel}
@@ -251,10 +272,10 @@ export function MainPage(props) {
 				<SidePanelRender/>	
 			</SlidingPanel>
 			<Row className="searchRow">
-				<Col>
+				<Col sm={8}>
 					<input className="searchItem" id="searchBar" type="text" onChange={handleSearchChange}/>
 				</Col>
-				<Col>
+				<Col sm={4}>
 					<Button className="searchItem" variant="primary" onClick={handleSearch}>Search 🔎</Button>
 				</Col>
 			</Row>
