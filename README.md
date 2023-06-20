@@ -34,7 +34,7 @@ npm run dev
 
 ### Design
 #### Backend
-The backend uses django rest framework. A default sqlite3 database is used with the django ORM. The backend provides user registration, login fuunctionality along with the movie storage related functions.
+The backend uses django rest framework. A default sqlite3 database is used with the django ORM. The backend provides user registration, login functionality along with the movie storage related functions.
 In the database, movies are stored with their Title, year of release, link to poster image, imdb ID and the user who saved the movie. Users must be logged in to access endpoints. The authentication used here is basic authentication. This is fine for the simple example case here but would use Oauth in a real full application. The registration service is simple only requiring username and a password. This was done for fast and easy registration but a proper application would require more information such as email.
 
 #### Frontend
