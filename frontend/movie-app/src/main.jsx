@@ -5,7 +5,7 @@ import './index.css'
 import 'react-sliding-side-panel/lib/index.css'
 import 'bootstrap/dist/css/bootstrap.css';
 import {configureStore} from '@reduxjs/toolkit'
-import createSagaMiddleware from 'Redux-Saga'
+import createSagaMiddleware from 'redux-saga'
 import {Provider} from 'react-redux'
 import authReducer from './features/authSlice'
 import movieReducer from './features/movieSlice'
