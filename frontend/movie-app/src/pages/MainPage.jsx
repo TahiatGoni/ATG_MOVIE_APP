@@ -272,11 +272,11 @@ export function MainPage(props) {
 				<SidePanelRender/>	
 			</SlidingPanel>
 			<Row className="searchRow">
-				<Col sm={8}>
+				<Col sm={10}>
 					<input className="searchItem" id="searchBar" type="text" onChange={handleSearchChange}/>
 				</Col>
-				<Col sm={4}>
-					<Button className="searchItem" variant="primary" onClick={handleSearch}>Search 🔎</Button>
+				<Col sm={2}>
+					<Button id="searchBtn" className="searchItem" variant="primary" onClick={handleSearch}>Search 🔎</Button>
 				</Col>
 			</Row>
 			<Row>

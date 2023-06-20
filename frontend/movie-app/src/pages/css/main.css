@@ -7,6 +7,13 @@
 	margin: 5px;
 }
 
+#searchBtn {
+	width: 100%;
+	margin: auto;
+	height: 100%;
+	font-size: 15px;
+}
+
 #searchBar {
 	width: 100%;
 }

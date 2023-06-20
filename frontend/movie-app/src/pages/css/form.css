@@ -15,6 +15,14 @@
 	color: white;
 }
 
+.infoLabel {
+	display: inline-block;
+	width: 6rem;
+	margin: 2px;
+	color: yellowgreen;
+	font-weight: bold;
+}
+
 .ButtonBar {
 	margin: 5px;
 	width: auto;
@@ -28,8 +36,10 @@
 }
 
 .mainLogin {
-	width: 100%;
-	margin: 10px;
-	display: ;
-	height: 100vh;
+	margin: auto;
+	width: 50%;
+	padding: 10px;
+	background-color: rgba(255, 255, 255, 0.5);
+	border-radius: 15px;
 }
+

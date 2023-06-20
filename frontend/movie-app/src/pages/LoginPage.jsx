@@ -32,9 +32,9 @@ export function LoginPage() {
 		xhr.send();
 
 		xhr.onload = function() {
-		  if (xhr.status === 401) { // analyze HTTP status of the response
-		    alert(`Error ${xhr.status}: ${xhr.statusText}`); // e.g. 404: Not Found
-		  } else if(xhr.status === 200) { // show the result
+		  if (xhr.status === 401) {
+		    alert(`Login Credentials incorrect or username exists! Try again please!`);
+		  } else if(xhr.status === 200) {
 		    console.log(xhr.response)
 		    dispatch(setCredentials({'username': username, 'password': password}))
 		  }
@@ -49,34 +49,38 @@ export function LoginPage() {
 		xhr.send(JSON.stringify({"username": username, "password": password}));
 
 		xhr.onload = function() {
-		  if (xhr.status === 201) { // analyze HTTP status of the response
+		  if (xhr.status === 201) { 
 		    	console.log(xhr.response)
 		    	dispatch(setCredentials({'username': username, 'password': password}))
 		  } else { // show the result
-		  	alert(`Error ${xhr.status}: ${xhr.statusText}`); // e.g. 404: Not Found
+		  	alert(`Login Credentials incorrect or username exists! Try again please!`); // e.g. 404: Not Found
 		  }
 		};
 	}
 
 	return(
-		<Container className="mainLogin" fluid>
-			<Row className="formRow">	
-				<Col>
-					<label className="formLabel" htmlFor="username">Username: </label>
-					<input id="username" type="text" onChange={handleUserChange}/>
-				</Col>
-			</Row>
-			<Row className="formRow">
-				<Col>
-					<label className="formLabel" htmlFor="password">Password: </label>
-					<input id="password" type="password"  onChange={handlePassChange}/>
-				</Col>
-			</Row>
-			<ButtonToolbar className="ButtonBar"> 
-				<Button variant="success" onClick={login}>Login</Button>{' '}
-				<Button variant="info" onClick={signup}>Signup</Button>{' '}
-			</ButtonToolbar>
-
+		<Container fluid>
+			<div className="mainLogin">
+				<Row className="formRow">	
+					<label className="infoLabel" htmlFor="password">If you do not have an account, register using signup to save your username and password</label>
+				</Row>
+				<Row className="formRow">	
+					<Col>
+						<label className="formLabel" htmlFor="username">Username: </label>
+						<input id="username" type="text" onChange={handleUserChange}/>
+					</Col>
+				</Row>
+				<Row className="formRow">
+					<Col>
+						<label className="formLabel" htmlFor="password">Password: </label>
+						<input id="password" type="password"  onChange={handlePassChange}/>
+					</Col>
+				</Row>
+				<div className="center"> 
+					<Button variant="success" onClick={login}>Login</Button>{' '}
+					<Button variant="info" onClick={signup}>Signup</Button>{' '}
+				</div>
+			</div>
 		</Container>
 	)
 }
