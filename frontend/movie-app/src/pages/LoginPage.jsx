@@ -24,6 +24,8 @@ export function LoginPage() {
 		setPassword(event.target.value);
 	};
 
+	//for login, we send a get request with the credentials to a verification endpoint
+	//if the request fails due to a forbidden, we let the user know that credentials are wrong
 	const login = () => {
 		const xhr = new XMLHttpRequest();
 		const url='http://127.0.0.1:8000/login/';
@@ -41,6 +43,8 @@ export function LoginPage() {
 		};
 	}
 
+	//for signup, we send a post request with the credentials to a signup endpoint
+	//The user gets created and their login details are saved for use
 	const signup = () => {
 		const xhr = new XMLHttpRequest();
 		const url='http://127.0.0.1:8000/signup/';

@@ -1,6 +1,7 @@
 import { call, put, takeEvery, select } from 'redux-saga/effects'
 import { setData } from '../features/movieSlice'
 
+//We use one saga to manage the users movies
 function* workFetchMovies() {
 	const auth = yield select(state=>state.auth.value)
 
